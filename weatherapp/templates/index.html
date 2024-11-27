@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+</head>
+
+<body style="background-image: url(static/images/pexels-triemli-28838153.jpg);">
+    <div class="cast">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="city" placeholder="Enter a City" id="">
+            <input type="submit" value="Change">
+        </form>
+        <div class="weather">
+            <h1 style="font-weight: 600;">{{data.city}}</h1>
+            <h3>{{data.description}}</h3>
+            <h3>{{data.temp}}°C</h3>
+            <h3>{{data.feels_like}}°C</h3>
+            <h3>{{data.temp_min}}°C</h3>
+            <h3>{{data.temp_max}}°C</h3>
+            <h3>{{data.pressure}}</h3>
+            <h3>{{data.humidity}}%</h3>
+            <h5>{{data.sunrise}}</h5>
+            <h5>{{data.sunset}}</h5>
+
+        </div>
+    </div>
+</body>
+
+</html>
